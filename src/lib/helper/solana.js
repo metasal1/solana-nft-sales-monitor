@@ -19,7 +19,7 @@ export const getAccountSignatures = async (conn, addr, option) => {
 };
 
 export const getParsedTransaction = async (conn, signature) => {
-  const txn = await conn.getParsedTransaction(signature);
+  const txn = await conn.getParsedTransaction(signature, { maxSupportedTransactionVersion: 2 });
   if (txn?.meta && txn?.meta?.err === null) return txn;
   return null;
 };
