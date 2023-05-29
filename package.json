@@ -30,8 +30,9 @@
   "homepage": "https://github.com/t4top/solana-nft-sales-monitor#readme",
   "dependencies": {
     "@metaplex/js": "^4.12.0",
-    "@solana/web3.js": "^1.73.0",
-    "axios": "^1.2.3"
+    "@solana/web3.js": "*",
+    "axios": "^1.2.3",
+    "dotenv": "^16.0.3"
   },
   "devDependencies": {
     "pm2": "^5.2.2",

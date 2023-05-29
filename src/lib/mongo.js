@@ -1,4 +1,3 @@
-
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -13,7 +12,7 @@ const client = new MongoClient(uri, {
     }
 });
 
-export default async function saveToMongo(db, table, data) {
+export const saveToMongo = async (data, db, table) => {
     try {
         await client.connect();
         const req = await client.db(db).collection(table).insertOne(data)

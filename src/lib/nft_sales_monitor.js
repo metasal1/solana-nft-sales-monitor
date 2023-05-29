@@ -8,6 +8,7 @@ import {
 import { sleep } from "./helper/sleep.js";
 import { logToConsole } from "./helper/log.js";
 import { postToDiscord } from "./discord.js";
+import { saveToMongo } from "./mongo.js";
 
 // Minimum polling interval in ms between requests to Solana network
 const POLLING_MIN_INTERVAL = 60000;
@@ -86,5 +87,6 @@ export class NFTSalesMonitor {
     logToConsole(nftSale);
     // publish to Discord
     await postToDiscord(this.discordWebhook, nftSale);
+    await saveToMongo(nftSale, 'nft', 'sales');
   }
 }
