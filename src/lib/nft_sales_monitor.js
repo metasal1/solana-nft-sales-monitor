@@ -14,7 +14,7 @@ import { saveToMongo } from "./mongo.js";
 const POLLING_MIN_INTERVAL = 60000;
 
 // Number of transactions within a single request
-const REQUEST_TRANSACTIONS_COUNT = 5;
+const REQUEST_TRANSACTIONS_COUNT = 1;
 
 // Base URL to view a transaction details on Solana blockchain
 const TRANSACTION_BASE_URL = "https://solscan.io/tx/";
@@ -77,8 +77,8 @@ export class NFTSalesMonitor {
           transactionURL: `${TRANSACTION_BASE_URL}${signature}`,
           ...parsed
         });
-    }
 
+    }
     return nftSale;
   }
 
@@ -86,7 +86,7 @@ export class NFTSalesMonitor {
     // log NFT sales
     logToConsole(nftSale);
     // publish to Discord
-    await postToDiscord(this.discordWebhook, nftSale);
-    await saveToMongo(nftSale, 'nft', 'sales');
+    // await postToDiscord(this.discordWebhook, nftSale);
+    // await saveToMongo(nftSale, 'nft', 'sales');
   }
 }
