@@ -86,7 +86,7 @@ export class NFTSalesMonitor {
     // log NFT sales
     logToConsole(nftSale);
     // publish to Discord
-    // await postToDiscord(this.discordWebhook, nftSale);
-    // await saveToMongo(nftSale, 'nft', 'sales');
+    await postToDiscord(this.discordWebhook, nftSale);
+    await saveToMongo(nftSale, 'nft', 'sales');
   }
 }
