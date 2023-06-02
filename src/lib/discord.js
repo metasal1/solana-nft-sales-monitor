@@ -13,7 +13,7 @@ export const postToDiscord = async (discordWebhook, salesData) => {
         author: {
           name: `${collection} Collection`
         },
-        title: `${nftName} → SOLD`,
+        title: `${nftName} sold ${(salesPrice).toFixed(2)} S◎L`,
         url: transactionURL,
         timestamp: date,
         fields: [
