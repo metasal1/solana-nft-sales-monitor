@@ -22,10 +22,15 @@ export const saveToMongo = async (data, db, table) => {
 
         const item = { date: (new Date().toLocaleString()), collection, saleDate: date.toLocaleString(), nftName, salesPrice, exchangeName, signature };
 
-        const req = await client.db(db).collection(table).insertOne(item)
-        console.log(req.acknowledged, req.insertedId, new Date())
+        const existingItem = await client.db(db).collection(table).findOne({ signature });
+        if (existingItem) {
+            console.log('Signature already exists. Skipping insertion.');
+            return;
+        }
+
+        const req = await client.db(db).collection(table).insertOne(item);
+        console.log(req.acknowledged, req.insertedId, new Date());
     } finally {
         // await client.close();
     }
 }
-// saveToMongo({ name: 'John', age: 25 });
