@@ -17,7 +17,7 @@ const POLLING_MIN_INTERVAL = 60000;
 const REQUEST_TRANSACTIONS_COUNT = 1;
 
 // Base URL to view a transaction details on Solana blockchain
-const TRANSACTION_BASE_URL = "https://solscan.io/tx/";
+const TRANSACTION_BASE_URL = "https://xray.helius.xyz/tx/";
 
 export class NFTSalesMonitor {
   constructor({ name, creatorAddress, startAfterHash, discordWebhook }) {
