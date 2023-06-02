@@ -14,7 +14,7 @@ import { saveToMongo } from "./mongo.js";
 const POLLING_MIN_INTERVAL = 60000;
 
 // Number of transactions within a single request
-const REQUEST_TRANSACTIONS_COUNT = 1;
+const REQUEST_TRANSACTIONS_COUNT = 5;
 
 // Base URL to view a transaction details on Solana blockchain
 const TRANSACTION_BASE_URL = "https://xray.helius.xyz/tx/";

@@ -6,5 +6,5 @@ export const logToConsole = salesData => {
   const { name: nftName } = salesData.metadata.offChain;
 
 
-  log(`${(new Date).toLocaleString()},${date.toLocaleString()}, ${collection}, ${nftName}, ${salesPrice} SOL, ${exchangeName}, ${signature}`);
+  log(`${(new Date).toLocaleString()},${date.toLocaleString()}, ${collection}, ${nftName}, ${(salesPrice).toFixed(2)} SOL, ${exchangeName}, ${signature.slice(0, 20) + '...'}`);
 };
