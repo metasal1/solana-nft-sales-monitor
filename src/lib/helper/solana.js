@@ -25,10 +25,7 @@ export const getParsedTransaction = async (conn, signature) => {
 };
 
 export const getNFTMetadata = async (conn, mintAddr) => {
-  const {
-    metadata: { Metadata }
-  } = programs;
-
+  const { metadata: { Metadata } } = programs;
   const metadataPDA = await Metadata.getPDA(mintAddr);
   const onChain = (await Metadata.load(conn, metadataPDA)).data;
 
